@@ -1,0 +1,9 @@
+image_height: 256
+image_width: 256
+funie_checkpoint: models/funie_generator.pth
+crack_checkpoint: models/crackformer_crack537.pth
+feature_groups:
+  - encoder
+  - decoder
+fusion_type: gated_residual
+fusion_initial_strength: 0.1

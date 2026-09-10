@@ -1,0 +1,29 @@
+data_root: "C:/Users/14163/Desktop/swust/DeepCrack_underwater"
+manifest: "train/manifest.csv"
+output_dir: "checkpoints/fusion"
+funie_checkpoint: "models/funie_generator.pth"
+crack_checkpoint: "models/crackformer_crack537.pth"
+
+device: "cuda"
+image_height: 256
+image_width: 256
+batch_size: 1
+num_workers: 0
+epochs: 100
+freeze_funie_epochs: 5
+freeze_funie_batchnorm: true
+val_ratio: 0.2
+seed: 42
+
+lr_funie: 0.000001
+lr_crack: 0.00001
+lr_fusion: 0.0001
+weight_decay: 0.0001
+grad_clip: 1.0
+save_every: 10
+
+loss_weights:
+  segmentation: 1.0
+  side: 0.2
+  enhancement: 1.0
+  edge: 0.1
